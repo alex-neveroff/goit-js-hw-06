@@ -16,18 +16,21 @@ const images = [
 const imagesWithTags = images
   .map(
     (image) =>
-      `<li class="item"><img src="${image.url}" alt="${image.alt}"></li>`
+      `<li class="item"><img class="photo" src="${image.url}" alt="${image.alt}"></li>`
   )
   .join("");
 
 const list = document.querySelector(".gallery");
-const item = document.querySelector("li");
-
 list.insertAdjacentHTML("afterbegin", imagesWithTags);
+
+const photos = list.querySelectorAll(".photo");
 
 list.style.listStyle = "none";
 list.style.display = "flex";
 list.style.gap = "20px";
 
-console.log(imagesWithTags);
-console.log(list);
+photos.forEach((photo) => {
+  photo.style.display = "block";
+  photo.style.maxWidth = "500px";
+  photo.style.height = "280px";
+});
