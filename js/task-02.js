@@ -8,29 +8,13 @@ const ingredients = [
 ];
 
 const list = document.querySelector("#ingredients");
+const withTags = [];
 
-const potatoes = document.createElement("li");
-potatoes.classList.add("item");
-potatoes.textContent = ingredients[0];
+ingredients.forEach((ingredient) => {
+  const ingredientTag = document.createElement("li");
+  ingredientTag.classList.add("item");
+  ingredientTag.textContent = ingredient;
+  withTags.push(ingredientTag);
+});
 
-const mushrooms = document.createElement("li");
-mushrooms.classList.add("item");
-mushrooms.textContent = ingredients[1];
-
-const garlic = document.createElement("li");
-garlic.classList.add("item");
-garlic.textContent = ingredients[2];
-
-const tomatos = document.createElement("li");
-tomatos.classList.add("item");
-tomatos.textContent = ingredients[3];
-
-const herbs = document.createElement("li");
-herbs.classList.add("item");
-herbs.textContent = ingredients[4];
-
-const condiments = document.createElement("li");
-condiments.classList.add("item");
-condiments.textContent = ingredients[5];
-
-list.prepend(potatoes, mushrooms, garlic, tomatos, herbs, condiments);
+list.prepend(...withTags);
