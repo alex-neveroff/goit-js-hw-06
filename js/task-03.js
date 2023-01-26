@@ -16,21 +16,26 @@ const images = [
 const imagesWithTags = images
   .map(
     (image) =>
-      `<li class="item"><img class="photo" src="${image.url}" alt="${image.alt}"></li>`
+      `<li class="gallery__item"><img class="gallery__photo" src="${image.url}" alt="${image.alt}"></li>`
   )
   .join("");
 
 const list = document.querySelector(".gallery");
 list.insertAdjacentHTML("afterbegin", imagesWithTags);
 
-const photos = list.querySelectorAll(".photo");
+// *************
+// Спочатку зробив так, але потім ментор в Slack
+// NATALIIA VALKO сказала робити через файл CSS
 
-list.style.listStyle = "none";
-list.style.display = "flex";
-list.style.gap = "20px";
+// const photos = list.querySelectorAll(".gallery__photo");
 
-photos.forEach((photo) => {
-  photo.style.display = "block";
-  photo.style.maxWidth = "500px";
-  photo.style.height = "280px";
-});
+// list.style.listStyle = "none";
+// list.style.width = "1280px";
+// list.style.display = "flex";
+// list.style.gap = "20px";
+
+// photos.forEach((photo) => {
+//   photo.style.display = "block";
+//   photo.style.maxWidth = "100%";
+//   photo.style.height = "300px";
+// });
