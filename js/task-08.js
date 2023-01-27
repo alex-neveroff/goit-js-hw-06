@@ -11,7 +11,7 @@ function touchSubmit(event) {
     return alert("Усі поля повинні бути заповнені");
   }
 
-  const login = { email: email.value, password: password.value };
-  console.log(login);
+  const loginForm = { email: email.value, password: password.value };
+  console.log(loginForm);
   event.currentTarget.reset();
 }
