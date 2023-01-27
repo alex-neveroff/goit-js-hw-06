@@ -10,11 +10,11 @@ function getRandomHexColor() {
 const createBoxes = (amount) => {
   const newBoxes = [];
   for (let i = 0; i < amount; i += 1) {
-    const box = document.createElement("div");
-    box.style.width = `${30 + i * 10}px`;
-    box.style.height = `${30 + i * 10}px`;
-    box.style.backgroundColor = getRandomHexColor();
-    newBoxes.push(box);
+    const nextBox = document.createElement("div");
+    nextBox.style.width = `${30 + i * 10}px`;
+    nextBox.style.height = `${30 + i * 10}px`;
+    nextBox.style.backgroundColor = getRandomHexColor();
+    newBoxes.push(nextBox);
   }
   return newBoxes;
 };
