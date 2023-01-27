@@ -6,10 +6,13 @@ symbolsInput.addEventListener("blur", (event) => {
     if (symbolsInput.classList.contains("invalid")) {
       symbolsInput.classList.remove("invalid");
     }
+    console.log(`Ввели ${event.target.value.length} символiв, супер`);
     return symbolsInput.classList.add("valid");
   }
   if (symbolsInput.classList.contains("valid")) {
     symbolsInput.classList.remove("valid");
   }
+  console.log(`Треба ввести ${exactLength} символiв`);
+  console.log(`Ввели ${event.target.value.length} символiв`);
   return symbolsInput.classList.add("invalid");
 });
